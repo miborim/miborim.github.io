@@ -1,0 +1,78 @@
+<!-- Document type declaration specifying HTML5 -->
+<!doctype html> 
+
+<!-- Opening HTML tag with the language attribute set to "en" (English) -->
+<html lang="en"> 
+
+<head>
+    <!-- Head section of the HTML document -->
+
+    <!-- Meta tag specifying character set as UTF-8 -->
+    <meta charset="UTF-8" />
+
+    <!-- Title of the document -->
+    <title>Jogo</title>
+
+    <!-- Script tags to include Phaser.js library and game scenes -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.23.0/dist/phaser.js"></script>
+    <script src="cenas/cena.js"></script>
+    <script src="cenas/welcome.js"></script>
+
+    <!-- Internal styling for the body and canvas -->
+    <style>
+        body {
+            margin-top: 1px;
+            padding: 0;
+        }
+
+        canvas {
+            border: 1px solid #000000;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Body section of the HTML document -->
+
+    <!-- Div with the ID "game" where the Phaser game will be rendered -->
+    <div id="game"></div>
+
+    <!-- Script tag containing JavaScript code for the game setup -->
+    <script type="text/javascript">
+        /*Global variables definition*/
+
+        // Configuration object for the Phaser game
+        const config = {
+            type: Phaser.AUTO,
+            scale: {
+                mode: Phaser.Scale.FIT
+            },
+            autoCenter: Phaser.Scale.CENTER,
+            width: 400, // Width of the game screen
+            height: 400, // Height of the game screen
+            backgroundColor: '#39addd', // Background color of the game
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 10 }, // Gravity in the arcade physics system
+                    debug: false // Debug mode (collision boxes, etc.)
+                }
+            },
+            parent: "game", // ID of the HTML element to contain the game
+            dom:{
+               createContainer: true,
+            },
+            scene: [Welcome, Cena] // Array of scenes to be included in the game
+        };
+        
+        // Create a new Phaser Game instance with the specified configuration
+        var game = new Phaser.Game(config);
+
+        // Start the 'Welcome' scene
+        game.scene.start('Welcome');
+    </script>
+
+</body>
+</html>
+<!-- Closing HTML tag -->

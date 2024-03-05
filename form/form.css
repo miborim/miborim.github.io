@@ -1,0 +1,40 @@
+#input-form {
+    padding: 15px;               /* Adiciona espaço interno de 15 pixels ao redor do formulário */
+    max-width: 270px;            /* Define a largura máxima do formulário como 270 pixels */
+    overflow: visible;           /* Define que o overflow (conteúdo excedente) será visível */
+    position: auto;              /* Define a posição automática do formulário */
+}
+
+#input-form input {
+    padding: 10px;               /* Adiciona espaço interno de 10 pixels ao redor do input */
+    font-size: 1.2rem;           /* Define o tamanho da fonte como 1.2 vezes o tamanho padrão */
+    width: 250px;                /* Define a largura do input como 250 pixels */
+    border-style: none;          /* Remove o estilo da borda do input */
+    background-color: #3c8fc0;   /* Define a cor de fundo do input */
+    color: #ffffff;               /* Define a cor do texto dentro do input como branco */
+    overflow: visible;           /* Define que o overflow (conteúdo excedente) será visível */
+}
+
+::placeholder {
+    color: rgb(225, 227, 198);    /* Define a cor do texto do espaço reservado (placeholder) */
+}
+
+textarea:focus, input:focus {
+    outline: none;               /* Remove o contorno (outline) ao focar no textarea ou input */
+}
+
+.webflow-style-input::after {
+    content: "";                 /* Adiciona um conteúdo vazio após o elemento com a classe .webflow-style-input */
+    position: absolute;          /* Define a posição absoluta para o elemento pseudoelemento ::after */
+    left: 15px;                  /* Define a posição à esquerda como 15 pixels */
+    bottom: 15px;                /* Define a posição na parte inferior como 15 pixels */
+    right: 0px;                  /* Define a posição à direita como 0 pixels */
+    height: 2px;                 /* Define a altura como 2 pixels */
+    background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+                                /* Aplica um fundo com gradiente linear utilizando várias cores */
+    background-size: 200% auto;  /* Define o tamanho do gradiente linear como 200% da largura */
+    animation: gradient 3s linear infinite;
+                                /* Aplica uma animação chamada "gradient" com duração de 3 segundos,
+                                   movimento linear e repetição infinita */
+    width: 300px;                /* Define a largura como 300 pixels */
+}
